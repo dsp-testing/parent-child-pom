@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.gema.apigee.tests</groupId>
+		<artifactId>apigee-spring-boot-starter-tests</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<artifactId>spring-boot-3.4-servlet</artifactId>
+	<name>Spring Boot 3.4 Tests</name>
+	<description>Apigee Spring Boot Starter Tests for Spring Boot 3.4 (Servlet web applications)</description>
+
+	<properties>
+		<spring-boot.version>3.4.3</spring-boot.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- TODO Remove as soon as no longer needed
+                 json-smart is a transitive dependency of some Spring Boot Starters and its version
+                 needs to be overridden because the linked version is outdated and has vulnerabilities.
+                 https://github.com/advisories/GHSA-pq2g-wx69-c263 -->
+			<dependency>
+				<groupId>net.minidev</groupId>
+				<artifactId>json-smart</artifactId>
+				<version>2.5.2</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>de.gema.apigee.tests</groupId>
+			<artifactId>shared</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot.version}</version>
+			</plugin>
+		</plugins>
+	</build>
+</project>
