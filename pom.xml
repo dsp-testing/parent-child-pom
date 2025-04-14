@@ -20,7 +20,7 @@
 
     <modules>
         <module>starter</module>
-        <module>apigee-spring-boot-starter-tests</module>
+        <module>tests</module>
     </modules>
 
     <build>
