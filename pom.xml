@@ -18,6 +18,7 @@
 
 	<modules>
 		<module>starter</module>
+		<module>apigee-starter</module>
 	</modules>
 
 	<build>
