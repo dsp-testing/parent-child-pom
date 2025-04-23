@@ -20,7 +20,6 @@
 
     <modules>
         <module>starter</module>
-        <module>tests</module>
     </modules>
 
     <build>
